@@ -196,7 +196,9 @@ catálogo típico oferece cabos para 5, 7 e 12 turbinas, com preços por metro p
 
 = Implementação
 
-A implementação foi realizada em Rust e está disponível em @owfcr2026. O parque eólico é modelado como um grafo
+A implementação foi realizada em Rust e está disponível em @owfcr2026, especificamente, o código relacionado ao método Sweeping está em #link("https://github.com/RaoniSilvestre/owfcr/blob/main/src/algorithms/sweep/base.rs", underline("base.rs")) e Sweeping Multistart em #link("https://github.com/RaoniSilvestre/owfcr/blob/main/src/algorithms/sweep/multistart.rs", underline("multistart.rs")).
+
+O parque eólico é modelado como um grafo
 completo, em que a distância euclidiana entre cada par de nós é pré-computada no
 carregamento da instância, permitindo acesso em tempo $O(1)$ a qualquer aresta.
 
