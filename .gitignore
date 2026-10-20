@@ -1,0 +1,6 @@
+/target
+images/*
+!images/.gitkeep
+analyze/wfcr_analyze/__pycache__/
+
+sqlite.db

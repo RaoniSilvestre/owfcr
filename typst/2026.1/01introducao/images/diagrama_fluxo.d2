@@ -1,0 +1,41 @@
+direction: right
+
+classes: {
+  turbine: {
+    shape: rectangle
+    style: {
+      fill: "#00CED1"
+      stroke: "#f0f0f0"
+      stroke-width: 1
+    }
+  }
+  substation: {
+    shape: circle
+    style: {
+      fill: "#FF8C00"
+      stroke: "#f0f0f0"
+      stroke-width: 1
+    }
+  }
+}
+
+T1: 1 {class: turbine}
+T2: 1 {class: turbine}
+T3: 1  {class: turbine}
+S: Subestação física(0) {class: substation}
+SS: Super-subestação artificial (-6) {class: substation}
+
+
+T4: 1 {class: turbine}
+T6: 1 {class: turbine}
+T5: 1 {class: turbine}
+
+T1 -> T2
+T2 -> T3
+T3 -> S
+
+T4 -> T5
+T5 -> S
+T6 -> T5
+
+S -> SS

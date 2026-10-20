@@ -1,0 +1,75 @@
+# Algorithm to run with `run-all` command.
+# Every entry uses `type` field to define the algorithm.
+#
+# [[algorithms]]
+# type = "ssp"
+# tipo = "normal"
+# tree = true
+#
+# [[algorithms]]
+# type = "sweeping_multi_start"
+#
+# [[algorithms]]
+# type = "ncc"
+# inner = { type = "sweeping_multi_start" }
+
+# # Random spanning tree (cada execução tem seed aleatória se não setado)
+# [[algorithms]]
+# type = "random"
+# seed = 42
+
+[[algorithms]]
+type = "transgenetic"
+iterations = 10000000
+population_size = 30
+elite_ratio = 0.3
+plasmid_size_min = 0.20
+plasmid_size_max = 0.80
+plasmid_bank_size = 10
+sector_size = 0.4
+destroy_repair_min = 0.4
+destroy_repair_max = 0.6
+algorithms = [
+  { type = "ssp", tipo = "nearest", tree = true },
+  { type = "ssp", tipo = "fartherst", tree = true },
+  { type = "sweeping_multi_start" },
+  { type = "sweeping" },
+  { type = "random" },
+]
+
+[[algorithms]]
+type = "vns"
+iterations = 10000000
+k_max = 4
+inner = { type = "sweeping_multi_start" }
+#
+# #
+# [[algorithms]]
+# type = "vns"
+# iterations = 1000
+# seed = 42
+# k_max = 4
+# inner = { type = "ssp", tipo = "nearest", tree = true }
+
+# [[algorithms]]
+# type = "vns"
+# iterations = 100000
+# seed = 42
+# k_max = 4
+# inner = { type = "sweeping_multi_start" }
+
+# [[algorithms]]
+# type = "memetic"
+# iterations = 100000
+# seed = 42
+# k_max = 5
+# population_size = 30
+# algorithms = [{ type = "random" }, { type = "ssp", tipo = "normal", tree = true }, { type = "ssp", tipo = "nearest", tree = true }, { type = "ssp", tipo = "sweep", band = 0.15, tree = true }, { type = "sweeping_multi_start" }]
+#
+# [[algorithms]]
+# type = "genetic"
+# iterations = 100000
+# seed = 42
+# k_max = 5
+# population_size = 100
+# algorithms = [{ type = "ssp", tipo = "normal", tree = true }, { type = "ssp", tipo = "nearest", tree = true }, { type = "ssp", tipo = "sweep", band = 0.15, tree = true }, { type = "sweeping_multi_start" }]
